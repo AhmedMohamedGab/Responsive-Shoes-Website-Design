@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    font-family: "Ubuntu", serif;
+    padding: 0;
+    margin: 0;
+}
+*::selection{
+	background-color: aqua;
+}
+body{
+    background-image: linear-gradient(to right, rgb(0, 5, 65), rgb(0, 6, 112));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body::after{
+    content: '';
+    background-color: rgb(217, 255, 0);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: circle(50% at right);
+    z-index: -1;
+}
+.container{
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 3px 3px 0 rgba(0, 7, 148, 0.1);
+    z-index: 0;
+}
+/* ******************************************** */
+nav{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+nav .logo{
+    display: flex;
+    text-decoration: none;
+    padding: 0 50px;
+    color: turquoise;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+nav .logo .up{
+    text-shadow: 0px 0px 10px turquoise;
+    transition: translate 0.2s,
+    color 0.1s;
+}
+nav .logo .up:hover{
+    translate: 0 -15px;
+    color: rgb(217, 255, 0);
+    text-shadow: 0px 0px 10px rgb(217, 255, 0);
+}
+/* *********************** */
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+nav ul li a{
+    padding: 5px;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(0, 7, 148);
+    background-color: rgb(217, 255, 0);
+    font-size: 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-out;
+}
+nav ul li a:hover{
+    color: rgb(217, 255, 0);
+    background-color: rgb(0, 7, 148);
+}
+/* ******************************************** */
+.content{
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .txt{
+    width: 45%;
+    letter-spacing: 1px;
+    padding: 20px;
+    color: white;
+}
+.content .txt .articleContent{
+    font-size: 18px;
+    line-height: 30px;
+}
+/* *********************** */
+.content .shoes{
+    width: 450px;
+    position: absolute;
+    right: 15%;
+    top: 150px;
+    rotate: 10deg;
+    z-index: -1;
+}
+/* ******************************************** */
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+}
+.buttons .shop{
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 7px 12px;
+    background-color: turquoise;
+    color: rgb(217, 255, 0);
+    border-radius: 10px;
+    border: solid 2px rgb(217, 255, 0);
+    box-shadow: 5px -5px 0 rgb(217, 255, 0);
+    transition: all 0.3s;
+}
+.buttons .shop:hover{
+    color: rgb(0, 7, 148);
+    border: solid 2px rgb(0, 7, 148);
+    cursor: pointer;
+}
+.buttons .shop:active{
+    color: turquoise;
+    background-color: rgb(0, 7, 148);
+    border: solid 2px turquoise;
+    box-shadow: none;
+    transform: translate(5px, -5px);
+}
+/* *********************** */
+.buttons .info{
+    width: 25px;
+    height: 25px;
+    background-color: rgb(0, 7, 148);
+    color: rgb(217, 255, 0);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+.buttons .info:hover{
+    background-color: turquoise;
+    color: rgb(0, 7, 148);
+}
+/* ******************************************** */
+@media screen and (min-width: 993px) and (max-width: 1200px){
+    .content .txt{
+        width: 35%;
+    }
+    /* *********************** */
+    .content .shoes{
+        width: 400px;
+        right: 12%;
+        top: 170px;
+    }
+}
+/* ******************************************** */
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .content .txt{
+        width: 40%;
+    }
+    .content .txt .articleTitle{
+        font-size: 28px;
+    }
+    .content .txt .articleContent{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    /* *********************** */
+    .content .shoes{
+        width: 350px;
+        right: 10%;
+        top: 180px;
+    }
+}
+/* ******************************************** */
+@media screen and (min-width: 600px) and (max-width: 768px){
+    nav{
+        height: 40px;
+        align-items: start;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+    nav ul li{
+        margin: 10px;
+    }
+    /* ******************************************** */
+    .content{
+        flex-direction: column;
+        align-items: start;
+    }
+    /* *********************** */
+    .content .txt{
+        width: 70%;
+    }
+    .content .txt .articleTitle{
+        font-size: 28px;
+    }
+    .content .txt .articleContent{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    /* *********************** */
+    .content .shoes{
+        width: 280px;
+        right: 25%;
+        top: 50%;
+        /* translate: 50%; */
+    }
+}
+/* ******************************************** */
+@media screen and (max-width: 600px){
+	body::after{
+		clip-path: circle(50% at 50% 80%);
+	}
+	/* ******************************************** */
+    nav{
+        flex-direction: column;
+        align-items: center;
+    }
+	/* *********************** */
+	nav ul li a{
+		color: rgb(217, 255, 0);
+		background-color: transparent;
+	}
+	nav ul li a:hover{
+		color: rgb(0, 7, 148);
+		background-color: rgb(217, 255, 0);
+	}
+    /* ******************************************** */
+    .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    /* *********************** */
+    .content .txt{
+        width: 90%;
+		text-align: center;
+    }
+    .content .txt .articleTitle{
+        font-size: 28px;
+    }
+    .content .txt .articleContent{
+        font-size: 16px;
+        line-height: 25px;
+    }
+    /* *********************** */
+    .content .shoes{
+        width: 220px;
+        right: 30%;
+        top: 55%;
+        /* translate: 50%; */
+    }
+    /* ******************************************** */
+    /* .buttons{
+        position: relative;
+        bottom: 20px;
+    } */
+	/* *********************** */
+	.buttons .shop{
+		background-color: turquoise;
+		color: rgb(0, 7, 148);
+		border: solid 2px rgb(0, 7, 148);
+		box-shadow: 5px -5px 0 rgb(0, 7, 148);
+	}
+	.buttons .shop:hover{
+		color: rgb(217, 255, 0);
+		border: solid 2px rgb(217, 255, 0);
+	}
+	.buttons .shop:active{
+		color: rgb(0, 7, 148);
+		background-color: rgb(217, 255, 0);
+		border: solid 2px rgb(0, 7, 148);
+	}
+}
